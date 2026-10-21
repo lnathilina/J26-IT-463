@@ -1,0 +1,3998 @@
+{
+ "note": "PIPELINE VERIFICATION, NOT A RESULT. Trained on synthetic data from 3 sessions; not a study model.",
+ "notes": [
+  "Session synthetic-1: stopwatch 00:00 = probe_schedule start_ms.",
+  "Session synthetic-2: stopwatch 00:00 = probe_schedule start_ms.",
+  "Session synthetic-3: stopwatch 00:00 = probe_schedule start_ms."
+ ],
+ "model_version": "l1-lr-8a00872ec62c",
+ "window_ms": 30000,
+ "classes": [
+  "absent",
+  "present"
+ ],
+ "features": [
+  "visible_fraction",
+  "visibility_changes",
+  "focused_fraction",
+  "focus_changes",
+  "pointer_per_s",
+  "pointer_slots_per_s",
+  "touch_per_s",
+  "touch_slots_per_s",
+  "key_per_s",
+  "key_slots_per_s"
+ ],
+ "mean": [
+  0.625,
+  0.0,
+  0.375,
+  0.0,
+  0.7628472222222222,
+  0.7093750000000002,
+  0.0,
+  0.0,
+  0.006597222222222222,
+  0.006597222222222222
+ ],
+ "scale": [
+  0.4841229182759271,
+  1.0,
+  0.4841229182759271,
+  1.0,
+  1.2991884022099054,
+  1.2049541170475382,
+  1.0,
+  1.0,
+  0.0164005078869716,
+  0.0164005078869716
+ ],
+ "coef": [
+  1.1658644319916,
+  0.0,
+  -2.277067990737938,
+  0.0,
+  1.1754005710526283,
+  1.176183430152227,
+  0.0,
+  0.0,
+  0.32023991664425516,
+  0.32023991664425516
+ ],
+ "intercept": 1.034129292055523,
+ "p_is": "probability of present; the state is present when the logit is above 0",
+ "trained_on": {
+  "folder": "sandbox/synthetic_l1",
+  "data_kind": [
+   "synthetic"
+  ],
+  "windows": {
+   "absent": 24,
+   "present": 72
+  },
+  "window_s": 30,
+  "guard_s": 2.0,
+  "seed": 2026,
+  "scikit_learn": "1.9.1"
+ },
+ "samples": [
+  {
+   "session_id": "synthetic-1",
+   "label": "present",
+   "window_start": 1792000090000.0,
+   "window_ms": 30000,
+   "features": {
+    "visible_fraction": 1.0,
+    "visibility_changes": 0,
+    "focused_fraction": 1.0,
+    "focus_changes": 0,
+    "pointer_per_s": 2.8666666666666667,
+    "pointer_slots_per_s": 2.6333333333333333,
+    "touch_per_s": 0.0,
+    "touch_slots_per_s": 0.0,
+    "key_per_s": 0.0,
+    "key_slots_per_s": 0.0
+   },
+   "p": 0.9256195306514979,
+   "confidence": 0.9256195306514979,
+   "state": "present",
+   "events": [
+    {
+     "type": "start",
+     "t": 1791999999998.7
+    },
+    {
+     "type": "visibility",
+     "t": 1791999999999.0,
+     "state": "visible"
+    },
+    {
+     "type": "focus",
+     "t": 1791999999999.0,
+     "state": "focus"
+    },
+    {
+     "type": "tick",
+     "t": 1792000091000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 5,
+     "pointer_slots": 4,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000092000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 5,
+     "pointer_slots": 4,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000093000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 1,
+     "pointer_slots": 1,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000094000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 1,
+     "pointer_slots": 1,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000095000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 2,
+     "pointer_slots": 2,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000096000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 5,
+     "pointer_slots": 4,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000097000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 1,
+     "pointer_slots": 1,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000098000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 2,
+     "pointer_slots": 2,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000099000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 1,
+     "pointer_slots": 1,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000100000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 5,
+     "pointer_slots": 4,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000101000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 5,
+     "pointer_slots": 4,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000102000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 2,
+     "pointer_slots": 2,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000103000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 2,
+     "pointer_slots": 2,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000104000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 4,
+     "pointer_slots": 4,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000105000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 1,
+     "pointer_slots": 1,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000106000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 2,
+     "pointer_slots": 2,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000107000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 3,
+     "pointer_slots": 3,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000108000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 4,
+     "pointer_slots": 4,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000109000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 2,
+     "pointer_slots": 2,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000110000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 4,
+     "pointer_slots": 4,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000111000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 5,
+     "pointer_slots": 4,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000112000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 3,
+     "pointer_slots": 3,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000113000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 2,
+     "pointer_slots": 2,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000114000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 1,
+     "pointer_slots": 1,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000115000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 3,
+     "pointer_slots": 3,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000116000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 2,
+     "pointer_slots": 2,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000117000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 3,
+     "pointer_slots": 3,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000118000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 3,
+     "pointer_slots": 3,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000119000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 5,
+     "pointer_slots": 4,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000120000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 2,
+     "pointer_slots": 2,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    }
+   ]
+  },
+  {
+   "session_id": "synthetic-1",
+   "label": "absent",
+   "window_start": 1792000660000.0,
+   "window_ms": 30000,
+   "features": {
+    "visible_fraction": 1.0,
+    "visibility_changes": 0,
+    "focused_fraction": 1.0,
+    "focus_changes": 0,
+    "pointer_per_s": 0.0,
+    "pointer_slots_per_s": 0.0,
+    "touch_per_s": 0.0,
+    "touch_slots_per_s": 0.0,
+    "key_per_s": 0.0,
+    "key_slots_per_s": 0.0
+   },
+   "p": 0.06643940966403282,
+   "confidence": 0.9335605903359672,
+   "state": "absent",
+   "events": [
+    {
+     "type": "start",
+     "t": 1791999999998.7
+    },
+    {
+     "type": "visibility",
+     "t": 1791999999999.0,
+     "state": "visible"
+    },
+    {
+     "type": "focus",
+     "t": 1791999999999.0,
+     "state": "focus"
+    },
+    {
+     "type": "focus",
+     "t": 1792000240000.5,
+     "state": "blur"
+    },
+    {
+     "type": "visibility",
+     "t": 1792000240000.7,
+     "state": "hidden"
+    },
+    {
+     "type": "visibility",
+     "t": 1792000420000.7,
+     "state": "visible"
+    },
+    {
+     "type": "focus",
+     "t": 1792000600000.5,
+     "state": "focus"
+    },
+    {
+     "type": "tick",
+     "t": 1792000661000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000662000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000663000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000664000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000665000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000666000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000667000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000668000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000669000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000670000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000671000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000672000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000673000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000674000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000675000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000676000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000677000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000678000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000679000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000680000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000681000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000682000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000683000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000684000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000685000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000686000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000687000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000688000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000689000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000690000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    }
+   ]
+  },
+  {
+   "session_id": "synthetic-1",
+   "label": "present",
+   "window_start": 1792001260000.0,
+   "window_ms": 30000,
+   "features": {
+    "visible_fraction": 0.0,
+    "visibility_changes": 0,
+    "focused_fraction": 0.0,
+    "focus_changes": 0,
+    "pointer_per_s": 0.0,
+    "pointer_slots_per_s": 0.0,
+    "touch_per_s": 0.0,
+    "touch_slots_per_s": 0.0,
+    "key_per_s": 0.0,
+    "key_slots_per_s": 0.0
+   },
+   "p": 0.41400741130895,
+   "confidence": 0.58599258869105,
+   "state": "absent",
+   "events": [
+    {
+     "type": "start",
+     "t": 1791999999998.7
+    },
+    {
+     "type": "visibility",
+     "t": 1791999999999.0,
+     "state": "visible"
+    },
+    {
+     "type": "focus",
+     "t": 1791999999999.0,
+     "state": "focus"
+    },
+    {
+     "type": "focus",
+     "t": 1792000240000.5,
+     "state": "blur"
+    },
+    {
+     "type": "visibility",
+     "t": 1792000240000.7,
+     "state": "hidden"
+    },
+    {
+     "type": "visibility",
+     "t": 1792000420000.7,
+     "state": "visible"
+    },
+    {
+     "type": "focus",
+     "t": 1792000600000.5,
+     "state": "focus"
+    },
+    {
+     "type": "focus",
+     "t": 1792000780000.5,
+     "state": "blur"
+    },
+    {
+     "type": "visibility",
+     "t": 1792000780000.7,
+     "state": "hidden"
+    },
+    {
+     "type": "visibility",
+     "t": 1792000960000.7,
+     "state": "visible"
+    },
+    {
+     "type": "visibility",
+     "t": 1792001140000.7,
+     "state": "hidden"
+    },
+    {
+     "type": "tick",
+     "t": 1792001261000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001262000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001263000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001264000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001265000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001266000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001267000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001268000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001269000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001270000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001271000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001272000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001273000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001274000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001275000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001276000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001277000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001278000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001279000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001280000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001281000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001282000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001283000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001284000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001285000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001286000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001287000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001288000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001289000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001290000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    }
+   ]
+  },
+  {
+   "session_id": "synthetic-2",
+   "label": "present",
+   "window_start": 1792000480000.0,
+   "window_ms": 30000,
+   "features": {
+    "visible_fraction": 1.0,
+    "visibility_changes": 0,
+    "focused_fraction": 0.0,
+    "focus_changes": 0,
+    "pointer_per_s": 0.06666666666666667,
+    "pointer_slots_per_s": 0.06666666666666667,
+    "touch_per_s": 0.0,
+    "touch_slots_per_s": 0.0,
+    "key_per_s": 0.0,
+    "key_slots_per_s": 0.0
+   },
+   "p": 0.8990002637674301,
+   "confidence": 0.8990002637674301,
+   "state": "present",
+   "events": [
+    {
+     "type": "start",
+     "t": 1791999999998.7
+    },
+    {
+     "type": "visibility",
+     "t": 1791999999999.0,
+     "state": "visible"
+    },
+    {
+     "type": "focus",
+     "t": 1791999999999.0,
+     "state": "focus"
+    },
+    {
+     "type": "focus",
+     "t": 1792000240000.5,
+     "state": "blur"
+    },
+    {
+     "type": "visibility",
+     "t": 1792000240000.7,
+     "state": "hidden"
+    },
+    {
+     "type": "visibility",
+     "t": 1792000420000.7,
+     "state": "visible"
+    },
+    {
+     "type": "tick",
+     "t": 1792000481000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000482000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000483000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000484000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000485000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000486000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000487000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 1,
+     "pointer_slots": 1,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000488000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000489000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000490000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000491000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000492000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000493000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000494000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000495000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000496000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000497000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000498000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000499000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000500000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 1,
+     "pointer_slots": 1,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000501000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000502000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000503000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000504000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000505000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000506000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000507000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000508000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000509000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000510000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    }
+   ]
+  },
+  {
+   "session_id": "synthetic-2",
+   "label": "present",
+   "window_start": 1792001050000.0,
+   "window_ms": 30000,
+   "features": {
+    "visible_fraction": 1.0,
+    "visibility_changes": 0,
+    "focused_fraction": 0.0,
+    "focus_changes": 0,
+    "pointer_per_s": 0.03333333333333333,
+    "pointer_slots_per_s": 0.03333333333333333,
+    "touch_per_s": 0.0,
+    "touch_slots_per_s": 0.0,
+    "key_per_s": 0.0,
+    "key_slots_per_s": 0.0
+   },
+   "p": 0.8931635629062076,
+   "confidence": 0.8931635629062076,
+   "state": "present",
+   "events": [
+    {
+     "type": "start",
+     "t": 1791999999998.7
+    },
+    {
+     "type": "visibility",
+     "t": 1791999999999.0,
+     "state": "visible"
+    },
+    {
+     "type": "focus",
+     "t": 1791999999999.0,
+     "state": "focus"
+    },
+    {
+     "type": "focus",
+     "t": 1792000240000.5,
+     "state": "blur"
+    },
+    {
+     "type": "visibility",
+     "t": 1792000240000.7,
+     "state": "hidden"
+    },
+    {
+     "type": "visibility",
+     "t": 1792000420000.7,
+     "state": "visible"
+    },
+    {
+     "type": "focus",
+     "t": 1792000600000.5,
+     "state": "focus"
+    },
+    {
+     "type": "focus",
+     "t": 1792000780000.5,
+     "state": "blur"
+    },
+    {
+     "type": "visibility",
+     "t": 1792000780000.7,
+     "state": "hidden"
+    },
+    {
+     "type": "visibility",
+     "t": 1792000960000.7,
+     "state": "visible"
+    },
+    {
+     "type": "tick",
+     "t": 1792001051000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001052000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001053000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001054000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001055000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001056000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001057000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001058000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001059000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001060000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001061000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001062000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001063000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001064000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001065000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001066000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001067000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001068000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001069000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001070000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001071000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001072000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001073000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001074000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 1,
+     "pointer_slots": 1,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001075000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001076000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001077000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001078000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001079000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792001080000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    }
+   ]
+  },
+  {
+   "session_id": "synthetic-3",
+   "label": "present",
+   "window_start": 1792000270000.0,
+   "window_ms": 30000,
+   "features": {
+    "visible_fraction": 0.0,
+    "visibility_changes": 0,
+    "focused_fraction": 0.0,
+    "focus_changes": 0,
+    "pointer_per_s": 0.0,
+    "pointer_slots_per_s": 0.0,
+    "touch_per_s": 0.0,
+    "touch_slots_per_s": 0.0,
+    "key_per_s": 0.0,
+    "key_slots_per_s": 0.0
+   },
+   "p": 0.41400741130895,
+   "confidence": 0.58599258869105,
+   "state": "absent",
+   "events": [
+    {
+     "type": "start",
+     "t": 1791999999998.7
+    },
+    {
+     "type": "visibility",
+     "t": 1791999999999.0,
+     "state": "visible"
+    },
+    {
+     "type": "focus",
+     "t": 1791999999999.0,
+     "state": "focus"
+    },
+    {
+     "type": "focus",
+     "t": 1792000240000.5,
+     "state": "blur"
+    },
+    {
+     "type": "visibility",
+     "t": 1792000240000.7,
+     "state": "hidden"
+    },
+    {
+     "type": "tick",
+     "t": 1792000271000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000272000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000273000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000274000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000275000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000276000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000277000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000278000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000279000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000280000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000281000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000282000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000283000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000284000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000285000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000286000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000287000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000288000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000289000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000290000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000291000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000292000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000293000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000294000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000295000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000296000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000297000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000298000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000299000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000300000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    }
+   ]
+  },
+  {
+   "session_id": "synthetic-3",
+   "label": "absent",
+   "window_start": 1792000870000.0,
+   "window_ms": 30000,
+   "features": {
+    "visible_fraction": 0.0,
+    "visibility_changes": 0,
+    "focused_fraction": 0.0,
+    "focus_changes": 0,
+    "pointer_per_s": 0.0,
+    "pointer_slots_per_s": 0.0,
+    "touch_per_s": 0.0,
+    "touch_slots_per_s": 0.0,
+    "key_per_s": 0.0,
+    "key_slots_per_s": 0.0
+   },
+   "p": 0.41400741130895,
+   "confidence": 0.58599258869105,
+   "state": "absent",
+   "events": [
+    {
+     "type": "start",
+     "t": 1791999999998.7
+    },
+    {
+     "type": "visibility",
+     "t": 1791999999999.0,
+     "state": "visible"
+    },
+    {
+     "type": "focus",
+     "t": 1791999999999.0,
+     "state": "focus"
+    },
+    {
+     "type": "focus",
+     "t": 1792000240000.5,
+     "state": "blur"
+    },
+    {
+     "type": "visibility",
+     "t": 1792000240000.7,
+     "state": "hidden"
+    },
+    {
+     "type": "visibility",
+     "t": 1792000420000.7,
+     "state": "visible"
+    },
+    {
+     "type": "focus",
+     "t": 1792000600000.5,
+     "state": "focus"
+    },
+    {
+     "type": "focus",
+     "t": 1792000780000.5,
+     "state": "blur"
+    },
+    {
+     "type": "visibility",
+     "t": 1792000780000.7,
+     "state": "hidden"
+    },
+    {
+     "type": "tick",
+     "t": 1792000871000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000872000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000873000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000874000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000875000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000876000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000877000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000878000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000879000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000880000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000881000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000882000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000883000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000884000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000885000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000886000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000887000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000888000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000889000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000890000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000891000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000892000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000893000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000894000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000895000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000896000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000897000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000898000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000899000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000900000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    }
+   ]
+  },
+  {
+   "session_id": "synthetic-1",
+   "label": null,
+   "window_start": 1792000232500.5,
+   "window_ms": 30000,
+   "features": {
+    "visible_fraction": 0.2500066650390625,
+    "visibility_changes": 1,
+    "focused_fraction": 0.25,
+    "focus_changes": 1,
+    "pointer_per_s": 0.7499166666666668,
+    "pointer_slots_per_s": 0.7332666666666667,
+    "touch_per_s": 0.0,
+    "touch_slots_per_s": 0.0,
+    "key_per_s": 0.0,
+    "key_slots_per_s": 0.0
+   },
+   "p": 0.6160917086338097,
+   "confidence": 0.6160917086338097,
+   "state": "present",
+   "events": [
+    {
+     "type": "start",
+     "t": 1791999999998.7
+    },
+    {
+     "type": "visibility",
+     "t": 1791999999999.0,
+     "state": "visible"
+    },
+    {
+     "type": "focus",
+     "t": 1791999999999.0,
+     "state": "focus"
+    },
+    {
+     "type": "tick",
+     "t": 1792000233000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 5,
+     "pointer_slots": 4,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000234000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 3,
+     "pointer_slots": 3,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000235000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 4,
+     "pointer_slots": 4,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000236000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 3,
+     "pointer_slots": 3,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000237000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 1,
+     "pointer_slots": 1,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000238000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 3,
+     "pointer_slots": 3,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000239000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 2,
+     "pointer_slots": 2,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000240000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 4,
+     "pointer_slots": 4,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "focus",
+     "t": 1792000240000.5,
+     "state": "blur"
+    },
+    {
+     "type": "visibility",
+     "t": 1792000240000.7,
+     "state": "hidden"
+    },
+    {
+     "type": "tick",
+     "t": 1792000241000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000242000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000243000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000244000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000245000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000246000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000247000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000248000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000249000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000250000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000251000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000252000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000253000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000254000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000255000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000256000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000257000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000258000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000259000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000260000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000261000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000262000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000263000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    }
+   ]
+  },
+  {
+   "session_id": "synthetic-2",
+   "label": null,
+   "window_start": 1792000585000.5,
+   "window_ms": 30000,
+   "features": {
+    "visible_fraction": 1.0,
+    "visibility_changes": 0,
+    "focused_fraction": 0.5,
+    "focus_changes": 1,
+    "pointer_per_s": 0.03333333333333333,
+    "pointer_slots_per_s": 0.03333333333333333,
+    "touch_per_s": 0.0,
+    "touch_slots_per_s": 0.0,
+    "key_per_s": 0.0,
+    "key_slots_per_s": 0.0
+   },
+   "p": 0.44317777834903727,
+   "confidence": 0.5568222216509627,
+   "state": "absent",
+   "events": [
+    {
+     "type": "start",
+     "t": 1791999999998.7
+    },
+    {
+     "type": "visibility",
+     "t": 1791999999999.0,
+     "state": "visible"
+    },
+    {
+     "type": "focus",
+     "t": 1791999999999.0,
+     "state": "focus"
+    },
+    {
+     "type": "focus",
+     "t": 1792000240000.5,
+     "state": "blur"
+    },
+    {
+     "type": "visibility",
+     "t": 1792000240000.7,
+     "state": "hidden"
+    },
+    {
+     "type": "visibility",
+     "t": 1792000420000.7,
+     "state": "visible"
+    },
+    {
+     "type": "tick",
+     "t": 1792000586000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000587000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000588000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000589000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000590000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000591000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000592000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000593000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000594000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000595000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000596000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000597000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000598000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 1,
+     "pointer_slots": 1,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000599000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000600000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "focus",
+     "t": 1792000600000.5,
+     "state": "focus"
+    },
+    {
+     "type": "tick",
+     "t": 1792000601000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000602000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000603000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000604000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000605000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000606000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000607000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000608000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000609000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000610000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000611000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000612000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000613000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000614000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000615000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000616000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    }
+   ]
+  },
+  {
+   "session_id": "synthetic-3",
+   "label": null,
+   "window_start": 1792000937500.7,
+   "window_ms": 30000,
+   "features": {
+    "visible_fraction": 0.25,
+    "visibility_changes": 1,
+    "focused_fraction": 0.0,
+    "focus_changes": 0,
+    "pointer_per_s": 0.0,
+    "pointer_slots_per_s": 0.0,
+    "touch_per_s": 0.0,
+    "touch_slots_per_s": 0.0,
+    "key_per_s": 0.0,
+    "key_slots_per_s": 0.0
+   },
+   "p": 0.5633149198253377,
+   "confidence": 0.5633149198253377,
+   "state": "present",
+   "events": [
+    {
+     "type": "start",
+     "t": 1791999999998.7
+    },
+    {
+     "type": "visibility",
+     "t": 1791999999999.0,
+     "state": "visible"
+    },
+    {
+     "type": "focus",
+     "t": 1791999999999.0,
+     "state": "focus"
+    },
+    {
+     "type": "focus",
+     "t": 1792000240000.5,
+     "state": "blur"
+    },
+    {
+     "type": "visibility",
+     "t": 1792000240000.7,
+     "state": "hidden"
+    },
+    {
+     "type": "visibility",
+     "t": 1792000420000.7,
+     "state": "visible"
+    },
+    {
+     "type": "focus",
+     "t": 1792000600000.5,
+     "state": "focus"
+    },
+    {
+     "type": "focus",
+     "t": 1792000780000.5,
+     "state": "blur"
+    },
+    {
+     "type": "visibility",
+     "t": 1792000780000.7,
+     "state": "hidden"
+    },
+    {
+     "type": "tick",
+     "t": 1792000938000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000939000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000940000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000941000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000942000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000943000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000944000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000945000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000946000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000947000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000948000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000949000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000950000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000951000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000952000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000953000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000954000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000955000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000956000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000957000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000958000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000959000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000960000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "visibility",
+     "t": 1792000960000.7,
+     "state": "visible"
+    },
+    {
+     "type": "tick",
+     "t": 1792000961000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000962000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000963000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000964000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000965000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000966000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000967000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    },
+    {
+     "type": "tick",
+     "t": 1792000968000.0,
+     "bucket_ms": 1000,
+     "pointer_count": 0,
+     "pointer_slots": 0,
+     "touch_count": 0,
+     "touch_slots": 0,
+     "key_count": 0,
+     "key_slots": 0
+    }
+   ]
+  }
+ ]
+}

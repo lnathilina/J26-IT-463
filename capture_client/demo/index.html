@@ -1,0 +1,333 @@
+<!doctype html>
+<!-- Demo page for the capture client: start, stop, live state, probes and export. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capture client demo</title>
+<style>
+  body { font: 14px system-ui, sans-serif; margin: 16px; max-width: 760px; }
+  video { width: 100%; max-width: 480px; background: #000; display: block; }
+  .state { display: flex; flex-wrap: wrap; gap: 16px; margin: 12px 0; font-size: 16px; }
+  .state b { padding: 2px 8px; border-radius: 4px; background: #eee; }
+  .error { color: #a00; font-weight: 600; min-height: 1.2em; }
+  table { border-collapse: collapse; font: 13px ui-monospace, monospace; }
+  td, th { border-bottom: 1px solid #ddd; padding: 2px 8px; text-align: left; }
+  .memo { background: #fff8e1; border-left: 4px solid #e0a800; padding: 6px 10px; }
+  .due { font-weight: 700; color: #a00; }
+</style>
+</head>
+<body>
+<h1>Capture client demo</h1>
+<p>Demo only (dry run).
+</p>
+<video id="lecture" muted playsinline aria-label="Lecture video placeholder"></video>
+<div class="state">
+  <span>Running: <b id="running">no</b></span>
+  <span>Tab (last recorded): <b id="vis">-</b></span>
+  <span>Window (last recorded): <b id="foc">-</b></span>
+</div>
+<div class="state">
+  <span>Last full second: pointer <b id="ptr">-</b></span>
+  <span>touch <b id="tch">-</b></span>
+  <span>keys <b id="key">-</b></span>
+  <span>(count / active 250 ms slots)</span>
+  <span>client work <b id="proc">-</b> ms</span>
+</div>
+<p>Probes: <b id="probe">-</b> (placeholder questions about this page; keys 1-4 answer, Esc skips;
+  <code>?probefast</code> runs them every minute for testing)</p>
+<p>State: <b id="state">-</b><br>
+  <small>L1 model from <code>l1_model.json</code>, a PIPELINE VERIFICATION model, not a study model.
+  A 30 s window ends every 5 s; latency = state output time - window end.</small><br>
+  <button id="checkmodel">(10 sample windows)</button> <span id="modelcheck"></span></p>
+<p class="memo"><b>Memory check:</b> at Start and then every 10 minutes, open Chrome's task manager<br>
+  <span id="memdue">Starts with Start.</span></p>
+<p>Session <code id="session">-</code> · participant <code id="participant">-</code> ·
+  next seq <b id="seq">0</b> · storage <b id="storage">-</b></p>
+<p id="error" class="error" role="alert"></p>
+<p><label>Type here :<br>
+  <textarea id="notes" rows="2" cols="50"></textarea></label></p>
+<p><button id="start">Start</button> <button id="stop">Stop (ends the session)</button>
+  <button id="export">Export JSON Lines</button></p>
+<table>
+  <thead><tr><th>t (ms)</th><th>wall clock</th><th>type</th><th>state</th></tr></thead>
+  <tbody id="log"></tbody>
+</table>
+<script type="module">
+  import * as signals from '../src/signals.js';
+  import * as activity from '../src/activity.js';
+  import { openStorage } from '../src/storage.js';
+  import * as probe from '../src/probe.js';
+  import { loadModel } from '../src/model.js';
+  import { checkSamples } from '../src/check.js';
+  import { createClassifier } from '../src/classifier.js';
+  import { makeDemoBank } from './demo_bank.js';
+  import {
+    createWriter, platformFrom, toJsonLines, resumeOrStartSession, saveSession, endSession, stashRecord, takeStash,
+  } from '../src/export.js';
+
+  const canvas = Object.assign(document.createElement('canvas'), { width: 480, height: 270 });
+  const g = canvas.getContext('2d');
+  // Draws the moving placeholder that stands in for the lecture video.
+  function draw(ms) {
+    g.fillStyle = '#123'; g.fillRect(0, 0, 480, 270);
+    g.fillStyle = '#fff'; g.font = '20px system-ui';
+    g.fillText('Lecture video placeholder', 24, 48);
+    g.fillText((ms / 1000).toFixed(1) + ' s', 24, 84);
+    g.fillStyle = '#4af'; g.fillRect(24, 220, (ms / 50) % 432, 12);
+    requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+  const video = document.getElementById('lecture');
+  video.srcObject = canvas.captureStream(30);
+  video.play();
+
+  const $ = (id) => document.getElementById(id);
+  const errors = [];
+  function showError(message) {
+    errors.push(message);
+    $('error').textContent = message + (errors.length > 1 ? ` (${errors.length} problems so far)` : '');
+  }
+
+  // ?nostore pretends IndexedDB is missing, to test the error path.
+  const idb = new URLSearchParams(location.search).has('nostore') ? null : globalThis.indexedDB;
+  const storage = await openStorage({ idb, onError: showError });
+  let tabStore = null;
+  try { tabStore = window.sessionStorage; } catch { }
+  const platform = platformFrom(navigator.userAgent, navigator.userAgentData);
+  let session = null;
+  let writer = null;
+  let running = false;
+  let sessionSaveFailed = false;
+  let unloading = false;
+  const MEMORY_EVERY_MS = 10 * 60 * 1000;
+  let memoryStart = null;
+  let lastRow = null;
+  const LOG_ROWS = 50;
+  // ?probefast runs probes every minute for testing.
+  const PROBE_FAST = new URLSearchParams(location.search).has('probefast')
+    ? { blockMs: 60000, gapMs: 30000, pendingMs: 10000, upperMs: 30 * 60000 } : {};
+  const probeBank = makeDemoBank(2 * (PROBE_FAST.blockMs ?? 10 * 60000));
+  let probeStatus = 'off';
+  let probeNotice = '';
+  let releaseCapture = null;
+
+  const STATE_EVERY_MS = 5000;
+  let modelFile = null;
+  let model = null;
+  try {
+    const res = await fetch('./l1_model.json', { cache: 'no-store' });
+    if (res.ok) {
+      modelFile = await res.json();
+      model = loadModel(modelFile);
+    }
+  } catch (err) {
+    showError(`The model was not loaded: ${err.message}`);
+  }
+  let classifier = null;
+  let lastState = null;
+  let stateCount = 0;
+
+  window.addEventListener('pagehide', () => { unloading = true; }, { capture: true });
+  window.addEventListener('pageshow', (e) => { if (e.persisted) { unloading = false; drainStash(); } });
+
+  async function drainStash() {
+    for (const record of takeStash(tabStore)) await storage.append(record);
+  }
+
+  function dryRunId() {
+    const alphabet = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
+    return 'T-' + [...crypto.getRandomValues(new Uint8Array(8))].map((b) => alphabet[b % 32]).join('');
+  }
+
+  // Saves a record, or keeps it for the next load while the page is going away.
+  function save(make) {
+    let record = null;
+    try {
+      record = make();
+      if (unloading) {
+        const problem = stashRecord(tabStore, record);
+        if (problem) showError(problem);
+      } else {
+        storage.append(record);
+      }
+    } catch (err) {
+      record = null;
+      showError(`Record refused: ${err.message}`);
+    } finally {
+      const problem = saveSession(tabStore, { ...session, next_seq: writer.nextSeq });
+      if (problem && !sessionSaveFailed) { sessionSaveFailed = true; showError(problem); }
+    }
+    return record;
+  }
+
+  // Starts capture, the classifier and probes for a new or continued session.
+  function begin() {
+    session = resumeOrStartSession(tabStore, { participantId: dryRunId() });
+    if (session.error) showError(session.error);
+    writer = createWriter({
+      sessionId: session.session_id, participantId: session.participant_id, timeOrigin: performance.timeOrigin,
+      nextSeq: session.next_seq, resumed: session.resumed, platform,
+    });
+    stateCount = 0;
+    lastState = null;
+    classifier = model && createClassifier({
+      model, hopMs: STATE_EVERY_MS, now: () => performance.now(),
+      emit: ({ t, ...fields }) => {
+        lastState = fields;
+        stateCount += 1;
+        save(() => writer.fromState(t, fields));
+      },
+    });
+    signals.start(undefined, {
+      onEvent: (e) => {
+        classifier?.noteEvent(e);
+        save(() => writer.fromSignal(e));
+      },
+    });
+    activity.start(undefined, {
+      onRow: (r) => {
+        lastRow = r;
+        const record = save(() => writer.fromRow(r, { hasFocus: document.hasFocus(), wallMs: Date.now() }));
+        if (record) probe.noteTick(record.seq, r.t);
+        classifier?.noteRow(r);
+      },
+    });
+    running = true;
+    memoryStart = Date.now();
+    probeStatus = 'starting';
+    probeNotice = '';
+    probe.start(undefined, {
+      sessionId: session.session_id, bank: probeBank, store: tabStore, options: PROBE_FAST,
+      emit: (type, t, fields) => save(() => writer.fromProbe(type, t, fields)),
+      onNotice: (message) => { probeNotice = message; },
+    }).then((on) => {
+      probeStatus = !on ? 'off in this tab' : `on (${on.blockMs / 60000}-min blocks${on.blockMs < 10 * 60000 ? ', fast test timing' : ''})`;
+      if (probeNotice) probeStatus += `. ${probeNotice}`;
+    }, (err) => { probeStatus = 'off'; showError(`Probes could not start: ${err.message}`); });
+  }
+
+  // Stops everything in order, then ends the session.
+  function end() {
+    probe.stop();
+    probeStatus = 'off';
+    activity.stop();
+    signals.stop();
+    classifier = null;
+    endSession(tabStore);
+    running = false;
+    memoryStart = null;
+    releaseCapture?.();
+    releaseCapture = null;
+  }
+
+  // Only one tab per browser may capture.
+  function takeCaptureLock() {
+    if (!navigator.locks) {
+      showError('This browser cannot stop a second tab from recording (no Web Locks).');
+      return Promise.resolve(() => {});
+    }
+    return new Promise((resolve) => {
+      navigator.locks.request('c1-capture', { ifAvailable: true }, (lock) => {
+        if (!lock) return resolve(null);
+        return new Promise((release) => resolve(release));
+      }).catch((err) => {
+        showError(`This browser refused Web Locks (${err?.name ?? 'Error'}), so a second tab cannot be stopped from recording.`);
+        resolve(() => {});
+      });
+    });
+  }
+
+  function forgetCopiedSession() {
+    endSession(tabStore);
+    takeStash(tabStore);
+    try { tabStore?.removeItem('c1.probe'); } catch { }
+    showError('Capture already runs in another tab of this browser, so this tab records nothing. '
+      + 'Close the other tab, then press Start here: a new session starts.');
+  }
+
+  // Reminds the tester to read memory every 10 minutes.
+  function memoryReminder() {
+    if (memoryStart === null) return { text: 'Starts with Start.', due: false };
+    const elapsed = Date.now() - memoryStart;
+    const k = Math.floor(elapsed / MEMORY_EVERY_MS);
+    const at = (n) => new Date(memoryStart + n * MEMORY_EVERY_MS).toLocaleTimeString();
+    if (elapsed - k * MEMORY_EVERY_MS < 60 * 1000) return { text: `Memory reading due now (the ${at(k)} reading).`, due: true };
+    return { text: `Next memory reading due at ${at(k + 1)}.`, due: false };
+  }
+
+  $('start').onclick = async () => {
+    if (!running) {
+      releaseCapture = releaseCapture ?? await takeCaptureLock();
+      if (releaseCapture) begin();
+      else forgetCopiedSession();
+    }
+    render();
+  };
+  $('stop').onclick = () => { if (running) end(); render(); };
+
+  const buildExport = async () => (session ? toJsonLines(await storage.readAll(), session.session_id) : '');
+  window.buildExport = buildExport;
+
+  function checkModel() {
+    if (!model) return { matched: 0, total: 0, text: 'no model file' };
+    return checkSamples(model, modelFile.samples);
+  }
+  window.checkModel = checkModel;
+  $('checkmodel').onclick = () => { $('modelcheck').textContent = checkModel().text; };
+  $('export').onclick = async () => {
+    const url = URL.createObjectURL(new Blob([await buildExport()], { type: 'application/x-ndjson' }));
+    Object.assign(document.createElement('a'), { href: url, download: `capture-${session.session_id}.jsonl` }).click();
+    setTimeout(() => URL.revokeObjectURL(url), 0);
+  };
+
+  // Refreshes the page from the latest records.
+  function render() {
+    const ev = signals.getEvents();
+    const anchor = ev.find((e) => e.type === 'start');
+    const last = (type) => ev.filter((e) => e.type === type).at(-1)?.state ?? '-';
+    $('running').textContent = running ? 'yes' : 'no';
+    $('vis').textContent = last('visibility');
+    $('foc').textContent = last('focus');
+    const row = lastRow;
+    for (const [id, k] of [['ptr', 'pointer'], ['tch', 'touch'], ['key', 'key']]) {
+      $(id).textContent = row ? `${row[k + '_count']} / ${row[k + '_slots']}` : '-';
+    }
+    $('proc').textContent = row ? row.proc_ms : '-';
+    $('probe').textContent = probeStatus;
+    $('state').textContent = !model ? 'off: no l1_model.json (run analysis/src/export_l1.py)'
+      : !lastState ? `waiting for the first window (${model.windowMs / 1000} s); model ${model.version}`
+        : `${lastState.state ?? 'unknown'} (confidence ${lastState.confidence?.toFixed(3) ?? '-'}), latency `
+          + `${lastState.latency_ms.toFixed(1)} ms, ${stateCount} windows`
+          + `${classifier?.skipped ? ` (${classifier.skipped} skipped: they ended while the page was frozen)` : ''}`
+          + `; model ${model.version}`;
+    const memory = memoryReminder();
+    $('memdue').textContent = memory.text;
+    $('memdue').className = memory.due ? 'due' : '';
+    $('session').textContent = session ? session.session_id + (session.resumed ? ' (continued after reload)' : '') : '-';
+    $('participant').textContent = session?.participant_id ?? '-';
+    $('seq').textContent = writer?.nextSeq ?? 0;
+    $('storage').textContent = storage.usingMemory ? 'memory only (not saved)' : 'IndexedDB';
+    $('start').disabled = running;
+    $('stop').disabled = !running;
+    $('log').replaceChildren(...ev.slice(-LOG_ROWS).map((e) => {
+      const wall = anchor ? new Date(anchor.wall_ms + (e.t - anchor.t)).toLocaleTimeString() : '';
+      const tr = document.createElement('tr');
+      for (const v of [e.t.toFixed(1), wall, e.type + (e.initial ? ' (state as found, not a change)' : ''), e.state ?? '']) {
+        tr.append(Object.assign(document.createElement('td'), { textContent: v }));
+      }
+      return tr;
+    }));
+  }
+  releaseCapture = await takeCaptureLock();
+  if (releaseCapture) {
+    await drainStash();
+    begin();
+  } else {
+    forgetCopiedSession();
+  }
+  render();
+  setInterval(render, 250);
+</script>
+</body>
+</html>
